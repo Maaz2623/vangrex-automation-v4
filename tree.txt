@@ -1,0 +1,186 @@
+- [Window] vangrex-automation-v4 - Visual Studio Code (focused)
+  #1 [Pane] (bounds: [0,0,1537,863], disabled, focusable)
+  - [Pane] vangrex-automation-v4 - Visual Studio Code
+    - [Pane]
+      - [Pane]
+        - [Pane]
+          #2 [Button] Minimize (bounds: [1366,0,57,43], focusable)
+          #3 [Button] Restore (bounds: [1422,0,59,43], focusable)
+          #4 [Button] Close (bounds: [1479,0,59,43], focusable)
+        - [Pane]
+          - [Pane]
+            - [Pane]
+              - [Pane]
+                #5 [Document] vangrex-automation-v4 - Visual Studio Code (bounds: [0,0,1538,864], focusable)
+                  - [Group]
+                    - [Pane]
+                      - [Group]
+                      - [Group]
+                      - [Group]
+                      - [MenuBar]
+                        #6 [MenuItem] File (bounds: [43,0,46,45], focusable)
+                        #7 [MenuItem] Edit (bounds: [87,0,48,45], focusable)
+                        #8 [MenuItem] Selection (bounds: [134,0,87,45], focusable)
+                        #9 [MenuItem] View (bounds: [218,0,55,45], focusable)
+                        #10 [MenuItem] Go (bounds: [272,0,43,45], focusable)
+                        #11 [MenuItem] Run (bounds: [313,0,49,45], focusable)
+                        #12 [MenuItem] More (bounds: [360,0,49,45], focusable)
+                      - [ToolBar]
+                        #13 [Button] Go Back (Alt+LeftArrow) (bounds: [443,8,30,29], focusable)
+                        #14 [Button] Go Forward (Alt+RightArrow) (bounds: [476,8,29,29], disabled, focusable)
+                        #15 [ToolBar] Agent Status (bounds: [508,7,586,31], focusable)
+                          #16 [Button] Open Quick Access (bounds: [509,8,521,29], focusable)
+                          #17 [Group] (bounds: [1028,8,65,29], focusable)
+                            - [Button] Toggle Chat
+                              - [Button] Toggle Chat
+                            - [Group]
+                              - [Group]
+                                - [Button] More Actions
+                      - [ToolBar]
+                        #18 [Button] Open in Agents Window (Ctrl+Shift+Alt+A) (bounds: [1104,8,32,29], focusable)
+                      - [ToolBar] Title actions
+                        #19 [Button] Customize Layout... (bounds: [1236,8,29,29], focusable)
+                        #20 [Button] Toggle Primary Side Bar (Ctrl+B) (bounds: [1268,8,29,29], focusable)
+                          - [Text] 
+                        #21 [Button] Toggle Panel (Ctrl+J) (bounds: [1301,8,29,29], focusable)
+                          - [Text] 
+                        #22 [Button] Toggle Secondary Side Bar (Ctrl+Alt+B) (bounds: [1333,8,29,29], focusable)
+                          - [Text] 
+                      - [Group]
+                      - [Group]
+                      - [Group]
+                      - [Tab] Active View Switcher
+                        #23 [TabItem] Explorer (Ctrl+Shift+E) (bounds: [9,47,47,47], focusable)
+                          - [Group] Explorer (Ctrl+Shift+E)
+                        #24 [TabItem] Search (Ctrl+Shift+F) (bounds: [9,102,47,46], focusable)
+                          - [Group] Search (Ctrl+Shift+F)
+                        #25 [TabItem] Source Control (Ctrl+Shift+G) (bounds: [9,157,47,47], focusable)
+                          - [Group] Source Control (Ctrl+Shift+G)
+                        #26 [TabItem] Run and Debug (Ctrl+Shift+D) (bounds: [9,211,47,47], focusable)
+                          - [Group] Run and Debug (Ctrl+Shift+D)
+                        #27 [TabItem] Extensions (Ctrl+Shift+X) (bounds: [9,266,47,47], focusable)
+                          - [Group] Extensions (Ctrl+Shift+X)
+                        #28 [TabItem] Vercel Vercel (bounds: [9,320,47,47], focusable)
+                          - [Group] Vercel
+                          - [Group] Vercel
+                        #29 [TabItem] Vercel Deployment (bounds: [9,375,47,46], focusable)
+                          - [Group] Vercel Deployment
+                        #30 [TabItem] Python (bounds: [9,430,47,46], focusable)
+                          - [Group] Python
+                        #31 [TabItem] Thunder Client (Ctrl+Shift+R) (bounds: [9,484,47,47], focusable)
+                          - [Group] Thunder Client (Ctrl+Shift+R)
+                      - [ToolBar] Manage
+                        #32 [Button] Accounts - Sign in to Sync Settings (bounds: [9,718,47,47], focusable)
+                          - [Group] Accounts - Sign in to Sync Settings
+                          - [Group] Accounts - Sign in to Sync Settings
+                            - [Text] 1
+                        #33 [Button] Manage (bounds: [9,773,47,47], focusable)
+                          - [Group] Manage
+                            - [Text] 
+                      - [Text] Explorer
+                      - [ToolBar] Explorer actions
+                        - [Group]
+                          - [Group]
+                            #34 [Button] Views and More Actions... (bounds: [398,50,29,29], focusable)
+                      - [ToolBar]
+                      - [Group]
+                      - [Group]
+                      #35 [Button] Explorer Section: vangrex-automation-v4 (bounds: [65,83,361,37], focusable)
+                        - [Text] Explorer Section: vangrex-automation-v4
+                      #36 [Tree] Files Explorer (bounds: [60,118,371,630], focusable)
+                        #37 [TreeItem] node_modules (bounds: [65,118,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\node_modules
+                        #38 [TreeItem] src (bounds: [65,146,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\src
+                        #39 [TreeItem] agents (bounds: [65,173,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\src\agents
+                        #40 [TreeItem] terminator (bounds: [65,200,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\src\terminator
+                        #41 [TreeItem] desktop.ts (bounds: [65,227,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\src\terminator\desktop.ts
+                        #42 [TreeItem] mouse.ts (bounds: [65,254,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\src\terminator\mouse.ts
+                        #43 [TreeItem] ui-tree.ts (bounds: [65,282,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\src\terminator\ui-tree.ts
+                        #44 [TreeItem] index.ts (bounds: [65,309,361,30], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\src\index.ts
+                        #45 [TreeItem] mouse.agent.ts (bounds: [65,337,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\src\mouse.agent.ts
+                        #46 [TreeItem] .env (bounds: [65,364,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\.env
+                        #47 [TreeItem] .gitignore (bounds: [65,391,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\.gitignore
+                        #48 [TreeItem] bun.lock (bounds: [65,418,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\bun.lock
+                        #49 [TreeItem] new-tree.txt (bounds: [65,446,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\new-tree.txt
+                        #50 [TreeItem] package.json (bounds: [65,473,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\package.json
+                        #51 [TreeItem] README.md (bounds: [65,500,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\README.md
+                        #52 [TreeItem] tree.txt (bounds: [65,527,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\tree.txt
+                        #53 [TreeItem] tsconfig.json (bounds: [65,554,361,29], focusable)
+                          - [Group] D:\projects\vangrex-automation-v4\tsconfig.json
+                      #54 [Button] Outline Section (bounds: [65,746,361,37], focusable)
+                        - [Text] Outline
+                      #55 [Button] Timeline Section (bounds: [65,782,361,36], focusable)
+                        - [Text] Timeline
+                      - [Group]
+                      - [Group]
+                        #56 [Group] Editor Group 1 (empty) (bounds: [437,44,1095,439], focusable)
+                          - [ToolBar]
+                      - [Tab] Active View Switcher
+                        #57 [TabItem] Problems (Ctrl+Shift+M) (bounds: [439,488,93,41], focusable)
+                          - [Group] Problems (Ctrl+Shift+M)
+                        #58 [TabItem] Output (Ctrl+Shift+U) (bounds: [530,488,78,41], focusable)
+                          - [Group] Output (Ctrl+Shift+U)
+                        #59 [TabItem] Debug Console (Ctrl+Shift+Y) (bounds: [606,488,136,41], focusable)
+                          - [Group] Debug Console (Ctrl+Shift+Y)
+                        #60 [TabItem] Terminal (Ctrl+`) (bounds: [741,488,87,41], focusable)
+                          - [Group] Terminal (Ctrl+`)
+                        #61 [TabItem] Ports (bounds: [826,488,62,41], focusable)
+                          - [Group] Ports
+                      - [ToolBar] Terminal actions
+                        #62 [Button] Focus Terminal (Ctrl+DownArrow) [Alt] Split Terminal (Ctrl+Shift+5) (bounds: [1207,493,99,31], focusable)
+                        #63 [Button] New Terminal (Ctrl+Shift+`) [Alt] Split Terminal (Ctrl+Shift+5) (bounds: [1310,494,29,29], focusable)
+                          - [Button] New Terminal (Ctrl+Shift+`) [Alt] Split Terminal (Ctrl+Shift+5)
+                        - [Group]
+                          - [Group]
+                            #64 [Button] Launch Profile... (bounds: [1334,494,21,29], focusable)
+                        #65 [Button] Split Terminal (Ctrl+Shift+5) (bounds: [1358,494,29,29], focusable)
+                        #66 [Button] Kill Terminal (bounds: [1390,494,29,29], focusable)
+                        - [Group]
+                          - [Group]
+                            #67 [Button] Views and More Actions... (bounds: [1422,494,29,29], focusable)
+                        #68 [Group] (bounds: [1459,498,3,22], disabled, focusable)
+                      - [ToolBar]
+                        #69 [Button] Maximize Panel (bounds: [1466,494,29,29], focusable)
+                          - [Text] 
+                        #70 [Button] Hide Panel (Ctrl+J) (bounds: [1498,494,30,29], focusable)
+                      - [Group]
+                        - [Group]
+                          - [Image]
+                          - [Group]
+                            #71 [Edit] Terminal 1, powershell Run the command: Toggle Screen Reader Accessibility Mode for an optimized screen reader experience Use Alt+F1 for terminal accessibility help (bounds: [462,612,12,23], focused, focusable)
+                            - [Text] 
+                            - [Image]
+                            - [Image]
+                        - [StatusBar]
+                          - [Text] 101 x 12
+                      #72 [StatusBar] (bounds: [0,828,1538,36], focusable)
+                        - [Group] remote
+                          #73 [Button] remote (bounds: [12,828,34,31], focusable)
+                        - [Group] No Problems
+                          #74 [Button] No Problems (bounds: [48,828,82,31], focusable)
+                        - [Group] Notifications
+                          #75 [Button] Notifications (bounds: [1491,828,37,31], focusable)
+                        - [Group] Copilot status
+                          #76 [Button] Copilot status (bounds: [1455,828,34,31], focusable)
+                      - [Text]
+                        - [Text] No results found for 'uninstall'
+                      - [Text]
+                      - [Group]
+                        - [Text] Cursor added: line 17 column 18
+                      - [Group]
+              - [Pane]
