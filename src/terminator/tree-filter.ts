@@ -1,12 +1,11 @@
 export function filterTree(tree: string, prompt: string): string {
   const lines = tree.split("\n");
 
-  // Keep only elements with bounds.
+  // Keep only elements with role, name, and valid bounds.
   const elements = lines.filter((line) =>
-    /#\d+ \[[^\]]+\].*\(bounds: \[[\d,\s]+\]/.test(line),
+    /^[^|\n]+\|[^|\n]*\|[\d,\s]+$/.test(line.trim()),
   );
 
-  // Extract meaningful words from the user's request.
   const stopWords = new Set([
     "click",
     "on",
@@ -19,6 +18,16 @@ export function filterTree(tree: string, prompt: string): string {
     "element",
     "open",
     "select",
+    "to",
+    "in",
+    "and",
+    "for",
+    "with",
+    "from",
+    "app",
+    "application",
+    "using",
+    "then",
   ]);
 
   const words = prompt
@@ -27,20 +36,20 @@ export function filterTree(tree: string, prompt: string): string {
     .split(/\s+/)
     .filter((word) => word.length > 1 && !stopWords.has(word));
 
-  // Rank elements by matching words against their descriptions.
   const ranked = elements
     .map((line) => {
-      const description = line
-        .replace(/^\s*#\d+\s*/, "")
-        .replace(/\(bounds:.*$/, "")
-        .toLowerCase();
+      const [role, name, bounds] = line.trim().split("|");
+      const description = `${role} ${name}`.toLowerCase();
 
       const score = words.reduce(
         (total, word) => total + (description.includes(word) ? 1 : 0),
         0,
       );
 
-      return { line: line.trim(), score };
+      return {
+        line: `${role}|${name}|${bounds}`,
+        score,
+      };
     })
     .filter((item) => item.score > 0)
     .sort((a, b) => b.score - a.score);
