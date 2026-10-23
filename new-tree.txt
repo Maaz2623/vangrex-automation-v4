@@ -17,14 +17,14 @@ ToolBar|Agent Status|508,7,586,31
 Button|Open Quick Access|509,8,521,29
 Group||1028,8,65,29
 Button|Open in Agents Window|1104,8,32,29
-Button|Installing...|1141,8,92,29
+Button|Update|1162,8,71,29
 Button|Customize Layout...|1236,8,29,29
 Button|Toggle Primary Side Bar|1268,8,29,29
 Button|Toggle Panel|1301,8,29,29
 Button|Toggle Secondary Side Bar|1333,8,29,29
 TabItem|Explorer|9,47,47,47
 TabItem|Search|9,102,47,46
-TabItem|Source Control - 3 pending changes|9,157,47,47
+TabItem|Source Control - 4 pending changes Source Control - 4 pending changes|9,157,47,47
 TabItem|Run and Debug|9,211,47,47
 TabItem|Extensions|9,266,47,47
 TabItem|Vercel|9,320,47,47
@@ -32,62 +32,39 @@ TabItem|Vercel Deployment|9,375,47,46
 TabItem|Python|9,430,47,46
 TabItem|Thunder Client|9,484,47,47
 Button|Accounts - Sign in to Sync Settings|9,718,47,47
-Button|Manage - Updating Code...|9,773,47,47
+Button|Manage - New Code update available.|9,773,47,47
 Button|Views and More Actions...|310,50,29,29
 Button|Changes Section|65,83,273,37
+Button|More Actions...|306,89,27,27
 Tree|Source Control Management|60,118,283,330
-TreeItem|Source Control Input|65,118,273,118
-Edit|The editor is not accessible at this time. To enable screen reader optimized mode, use Shift+Alt+F1|97,202,175,27
+TreeItem|Source Control Input|65,118,273,43
+Edit|The editor is not accessible at this time. To enable screen reader optimized mode, use Shift+Alt+F1|97,127,175,27
 Button|Generate Commit Message|298,126,30,29
-TreeItem|$ Commit|65,234,273,47
-Button|Commit Changes on "main"|89,242,213,31
-Button|More Actions...|302,242,31,31
-TreeItem|Changes|65,279,273,29
-TreeItem|new-tree.txt, Modified|65,306,273,29
-Button|Open File|221,308,27,27
-Button|Discard Changes|248,308,27,27
-Button|Stage Changes|275,308,27,27
-TreeItem|tree-filter.ts, Modified, src\terminator|65,334,273,30
-TreeItem|ui-tree.ts, Modified, src\terminator|65,362,273,29
-Button|Graph Section|65,446,273,36
-Button|main, origin/main|119,451,59,27
-Button|Go to Current History Item|181,451,27,27
-Button|Fetch From All Remotes|210,451,27,27
-Button|Pull|240,451,27,27
-Button|Push|270,451,27,27
-Button|Refresh|300,451,27,27
-Button|More Actions...|330,451,27,27
-Tree|Source Control History|60,481,283,337
-Group|Editor Group 1|349,44,1183,439
-TabItem|Problems|351,488,93,41
-TabItem|Output|442,488,78,41
-TabItem|Debug Console|518,488,136,41
-TabItem|Terminal|653,488,87,41
-TabItem|Ports|738,488,62,41
-Button|Focus Terminal [Alt] Split Terminal|1224,493,83,31
-Button|New Terminal [Alt] Split Terminal|1310,494,29,29
-Button|Launch Profile...|1334,494,21,29
-Button|Split Terminal|1358,494,29,29
-Button|Kill Terminal|1390,494,29,29
-Button|Views and More Actions...|1422,494,29,29
-Group||1459,498,3,22
-Button|Maximize Panel|1466,494,29,29
-Button|Hide Panel|1498,494,30,29
-Edit|Terminal 1, bun Run the command: Toggle Screen Reader Accessibility Mode for an optimized screen reader experience Use Alt+F1 for terminal accessibility help|374,785,12,23
-Edit|Terminal 2, bun Run the command: Toggle Screen Reader Accessibility Mode for an optimized screen reader experience Use Alt+F1 for terminal accessibility help|889,785,12,23
-Edit|Terminal input|1170,569,12,23
-List|Terminal tabs|1382,527,150,297
+TreeItem|$ Commit|65,160,273,47
+Button|Commit Changes on "main"|89,168,213,31
+Button|More Actions...|302,168,31,31
+TreeItem|Changes|65,205,273,29
+TreeItem|new-tree.txt, Modified|65,232,273,29
+Button|Open File|221,234,27,27
+Button|Discard Changes|248,234,27,27
+Button|Stage Changes|275,234,27,27
+TreeItem|index.ts, Modified, src|65,259,273,30
+TreeItem|mouse-listener.ts, Modified, src|65,287,273,29
+TreeItem|mouse.ts, Modified, src\terminator|65,314,273,29
+Button|Graph Section|65,446,273,37
+Button|main, origin/main|119,452,59,27
+Button|Go to Current History Item|181,452,27,27
+Button|Fetch From All Remotes|210,452,27,27
+Button|Pull|240,452,27,27
+Button|Push|270,452,27,27
+Button|Refresh|300,452,27,27
+Button|More Actions...|330,452,27,27
+Tree|Source Control History|60,482,283,336
+Group|Editor Group 1|349,44,1183,780
 StatusBar||0,828,1538,36
 Button|remote|12,830,34,31
 Button|vangrex-automation-v4 - main*, Checkout Branch/Tag...|50,830,71,31
 Button|vangrex-automation-v4 - Synchronize Changes|120,830,30,31
 Button|No Problems|158,830,82,31
 Button|Notifications|1491,830,37,31
-Button|check Prettier|1403,830,86,31
-Button|Copilot status|1364,830,34,31
-Menu||302,278,263,134
-MenuItem|Commit|307,278,253,31
-MenuItem|Commit|307,307,253,31
-Group||302,343,263,3
-MenuItem|Commit & Push|307,350,253,31
-MenuItem|Commit & Sync|307,380,253,31
+Button|Copilot status|1455,830,34,31

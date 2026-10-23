@@ -7,6 +7,7 @@ import z from "zod";
 
 import { clickAtBounds } from "./terminator/mouse";
 import { filterTree } from "./terminator/tree-filter";
+import * as Terminator from "@mediar-ai/terminator";
 
 // --------------------------------------------------
 // Configuration
@@ -62,6 +63,8 @@ ${candidates}
         y: z.number(),
         width: z.number(),
         height: z.number(),
+        clickType: z.enum(["left", "right"]),
+        double: z.boolean(),
       }),
     }),
   });
@@ -71,11 +74,18 @@ ${candidates}
   );
 
   // Existing click architecture remains unchanged.
-  await clickAtBounds(output);
+  await clickAtBounds({
+    x: output.x,
+    y: output.y,
+    width: output.width,
+    height: output.height,
+    clickType: output.clickType,
+    double: output.double,
+  });
 
   console.log(`Click completed. Tokens used: ${usage.totalTokens}`);
 
-  return `Clicked the requested element. Tokens used: ${usage.totalTokens}`;
+  return `Clicked the requested element. ClickType: ${output.clickType}. Tokens used: ${usage.totalTokens}`;
 }
 
 // --------------------------------------------------
@@ -96,7 +106,9 @@ bot.command("start", async (ctx) => {
 
 bot.command("reset", async (ctx) => {
   if (activeChats.has(ctx.chat.id)) {
-    await ctx.reply("A click is currently running. Please wait before sending another command.");
+    await ctx.reply(
+      "A click is currently running. Please wait before sending another command.",
+    );
     return;
   }
 
