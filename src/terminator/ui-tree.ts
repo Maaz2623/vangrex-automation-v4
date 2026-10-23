@@ -2,67 +2,97 @@ import { desktop } from "./desktop";
 import * as Terminator from "@mediar-ai/terminator";
 import { writeFile } from "node:fs/promises";
 
+// --------------------------------------------------
+// Configuration
+// --------------------------------------------------
+
 const OUTPUT_FILE = "new-tree.txt";
 const REFRESH_MS = 1000;
+
+// --------------------------------------------------
+// Compact UI Tree
+// Output format: Role|Name
+// Removes bounds metadata and keyboard shortcuts.
+// Missing names are represented by N/A.
+// --------------------------------------------------
 
 function compactTree(tree: string): string {
   const output: string[] = [];
 
   for (const raw of tree.split("\n")) {
     const line = raw.trim();
+
     if (!line) continue;
 
-    const windowMatch = line.match(/^-\s+\[Window\]\s+(.+)$/);
-    if (windowMatch) {
-      output.push(`WINDOW|${windowMatch[1].split(" - ")[0]}`);
-      continue;
-    }
+    const match = line.match(/^(?:#(\d+)\s+|-\s+)?\[([^\]]+)\]\s*(.*)$/);
 
-    const match = line.match(/#\d+\s+\[([^\]]+)\]\s*(.*)/);
     if (!match) continue;
 
-    const [, role, rest] = match;
+    const [, , role, rawContent] = match;
 
-    // Extract bounds BEFORE cleaning the rest of the line.
-    const boundsMatch = rest.match(/\(bounds:\s*\[([^\]]+)\]/);
+    let name = rawContent
+      // Remove bounds metadata.
+      .replace(/\s*\(bounds:\s*\[[^\]]*\][^)]*\)/g, "")
+      // Remove keyboard shortcuts, e.g. (Ctrl+Shift+X).
+      .replace(/\s*\((?:Ctrl|Alt|Shift|Win|Windows|Cmd|Command)\b[^)]*\)/gi, "")
+      .trim();
 
-    const bounds = boundsMatch ? boundsMatch[1].replace(/\s/g, "") : "";
+    if (!name) {
+      name = "N/A";
+    }
 
-    const name = rest
-      .replace(/\(bounds:\s*\[[^\]]+\]\s*\)/g, "")
-      .replace(/\([^)]*\)/g, "")
-      .replace(/\b(focused|focusable|disabled|selected|checked)\b/g, "")
-      .replace(/\s+/g, " ")
-      .trim()
-      .replace(/[, ]+$/, "");
+    // Prevent names from breaking the Role|Name format.
+    name = name.replace(/\|/g, "/");
 
-    output.push(`${role}|${name}|${bounds}`);
+    output.push(`${role}|${name}`);
   }
 
   return output.join("\n");
 }
 
-export async function getCurrentApplicationTree(): Promise<string> {
-  const app = await desktop.getCurrentApplication();
+// --------------------------------------------------
+// Application Tree
+// --------------------------------------------------
 
-  const { formatted } = desktop.getWindowTreeResult(
-    app.processName(),
-    undefined,
-    {
-      propertyMode: Terminator.PropertyLoadingMode.Complete,
-      formatOutput: true,
-      treeOutputFormat: Terminator.TreeOutputFormat.ClusteredYaml,
-    },
-  );
+export async function getCurrentApplicationTree(): Promise<string> {
+  const { formatted } = await desktop.getWindowTreeResult("Code", undefined, {
+    propertyMode: Terminator.PropertyLoadingMode.Complete,
+    formatOutput: true,
+    treeOutputFormat: Terminator.TreeOutputFormat.ClusteredYaml,
+  });
 
   return compactTree(formatted ?? "");
 }
 
-const sleep = (ms: number) =>
-  new Promise<void>((resolve) => setTimeout(resolve, ms));
+// --------------------------------------------------
+// Refresh Loop
+// --------------------------------------------------
 
-while (true) {
-  const tree = await getCurrentApplicationTree();
-  await writeFile(OUTPUT_FILE, tree, "utf8");
-  await sleep(REFRESH_MS);
+const sleep = (ms: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
+async function main(): Promise<void> {
+  console.log(`Watching VS Code UI tree every ${REFRESH_MS} ms.`);
+  console.log(`Output: ${OUTPUT_FILE}`);
+
+  while (true) {
+    try {
+      const tree = await getCurrentApplicationTree();
+
+      if (tree.length > 0) {
+        await writeFile(OUTPUT_FILE, tree, "utf8");
+      } else {
+        console.warn("Empty UI tree received; keeping the previous output.");
+      }
+    } catch (error) {
+      console.error(
+        "UI tree refresh failed; retrying on the next cycle:",
+        error instanceof Error ? error.message : error,
+      );
+    }
+
+    await sleep(REFRESH_MS);
+  }
 }
+
+main().catch(console.error);

@@ -3,11 +3,11 @@ import { Bot } from "grammy";
 import { generateText, Output } from "ai";
 import { google } from "@ai-sdk/google";
 import { readFile } from "node:fs/promises";
-import z from "zod";
+import { z } from "zod";
 
+import { desktop } from "./terminator/desktop";
 import { clickAtBounds } from "./terminator/mouse";
 import { filterTree } from "./terminator/tree-filter";
-import * as Terminator from "@mediar-ai/terminator";
 
 // --------------------------------------------------
 // Configuration
@@ -15,6 +15,7 @@ import * as Terminator from "@mediar-ai/terminator";
 
 const MODEL = "gemini-3.5-flash-lite";
 const TREE_FILE = "new-tree.txt";
+const LOCATOR_TIMEOUT_MS = 2000;
 
 const botToken = process.env.TELEGRAM_BOT_TOKEN;
 
@@ -24,15 +25,29 @@ if (!botToken) {
 
 const bot = new Bot(botToken);
 
-// Prevent simultaneous commands from the same chat
+// Prevent simultaneous commands from the same chat.
 const activeChats = new Set<number>();
+
+// --------------------------------------------------
+// Output schema
+// --------------------------------------------------
+
+const clickSelectionSchema = z.object({
+  role: z.string(),
+  name: z.string(),
+  clickType: z.enum(["left", "right"]),
+  double: z.boolean(),
+});
 
 // --------------------------------------------------
 // Execute one click per user instruction
 // --------------------------------------------------
 
 async function executeClick(prompt: string): Promise<string> {
+  // Read the current UI tree.
   const tree = await readFile(TREE_FILE, "utf-8");
+
+  // Filter candidates using the user's instruction.
   const candidates = filterTree(tree, prompt);
 
   if (!candidates.trim()) {
@@ -41,51 +56,113 @@ async function executeClick(prompt: string): Promise<string> {
 
   console.log("\nMatching candidates:\n", candidates);
 
+  // Ask Gemini to select an element by role and name.
   const { output, usage } = await generateText({
     model: google(MODEL),
+
+    instructions: `
+    
+Choose the single UI element that best matches the request.
+
+Select only from the supplied candidates.
+Return the exact role and name of the selected candidate.
+Do not invent or modify either value.
+
+Click rules:
+- Use "left" for a normal click.
+- Use "right" for a right-click.
+- Set double to true only if the user requests a double-click.
+
+Candidates:
+${candidates}
+    `,
 
     prompt: `
 User request: ${prompt}
 
-Choose the single UI element that best matches the request.
-Use only the supplied candidates.
-Return its exact bounds.
-
-Bounds format: [x, y, width, height].
-
-Candidates:
-${candidates}
 `,
 
     output: Output.object({
-      schema: z.object({
-        x: z.number(),
-        y: z.number(),
-        width: z.number(),
-        height: z.number(),
-        clickType: z.enum(["left", "right"]),
-        double: z.boolean(),
-      }),
+      schema: clickSelectionSchema,
     }),
   });
 
-  console.log(
-    `Clicking at bounds: [${output.x}, ${output.y}, ${output.width}, ${output.height}]`,
-  );
+  const { role, name, clickType, double } = output;
 
-  // Existing click architecture remains unchanged.
-  await clickAtBounds({
-    x: output.x,
-    y: output.y,
-    width: output.width,
-    height: output.height,
-    clickType: output.clickType,
-    double: output.double,
+  // Validate that the selected role and name exist in the candidates.
+  const validCandidate = candidates.split("\n").some((line) => {
+    const separator = line.indexOf("|");
+
+    if (separator === -1) return false;
+
+    const candidateRole = line.slice(0, separator).trim();
+    const candidateName = line.slice(separator + 1).trim();
+
+    return candidateRole === role && candidateName === name;
   });
 
-  console.log(`Click completed. Tokens used: ${usage.totalTokens}`);
+  if (!validCandidate) {
+    throw new Error(
+      `Selected element was not in the candidate list: ${role}|${name}`,
+    );
+  }
 
-  return `Clicked the requested element. ClickType: ${output.clickType}. Tokens used: ${usage.totalTokens}`;
+  console.log(`Selected element: ${role}|${name}`);
+
+  // --------------------------------------------------
+  // Retrieve actual bounds using Terminator
+  // --------------------------------------------------
+
+  const selector = `role:${role}|name:${name}`;
+
+  console.log("Selector:", selector);
+
+  const element = await desktop
+    .locator(`role:${role}|name:${name}`)
+    .first(LOCATOR_TIMEOUT_MS);
+  const bounds = element.bounds();
+
+  console.log(name, bounds);
+
+  if (
+    !bounds ||
+    !Number.isFinite(bounds.x) ||
+    !Number.isFinite(bounds.y) ||
+    !Number.isFinite(bounds.width) ||
+    !Number.isFinite(bounds.height) ||
+    bounds.width <= 0 ||
+    bounds.height <= 0
+  ) {
+    throw new Error(`Could not retrieve valid bounds for ${role}|${name}`);
+  }
+
+  console.log(
+    `Element bounds: [${bounds.x}, ${bounds.y}, ${bounds.width}, ${bounds.height}]`,
+  );
+
+  // --------------------------------------------------
+  // Click using the existing mouse implementation
+  // --------------------------------------------------
+
+  const clickPosition = await clickAtBounds({
+    x: bounds.x,
+    y: bounds.y,
+    width: bounds.width,
+    height: bounds.height,
+    clickType,
+    double,
+  });
+
+  console.log(
+    `Clicked at (${clickPosition.x}, ${clickPosition.y}). Tokens used: ${usage.totalTokens}`,
+  );
+
+  return (
+    `Clicked: ${role}|${name}\n` +
+    `Click type: ${clickType}${double ? " (double-click)" : ""}\n` +
+    `Position: (${clickPosition.x}, ${clickPosition.y})\n` +
+    `Tokens used: ${usage.totalTokens}`
+  );
 }
 
 // --------------------------------------------------
@@ -96,7 +173,7 @@ bot.command("start", async (ctx) => {
   await ctx.reply(
     "Vangrex is online. Send me an instruction to click a UI element.\n\n" +
       "Each message performs one click.\n" +
-      "Use /reset to clear the command state.",
+      "Use /reset to check command readiness.",
   );
 });
 

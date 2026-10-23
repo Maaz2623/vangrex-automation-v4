@@ -1,10 +1,17 @@
 export function filterTree(tree: string, prompt: string): string {
   const lines = tree.split("\n");
 
-  // Keep only elements with role, name, and valid bounds.
-  const elements = lines.filter((line) =>
-    /^[^|\n]+\|[^|\n]*\|[\d,\s]+$/.test(line.trim()),
-  );
+  // Keep elements containing both a role and a name.
+  const elements = lines.filter((line) => {
+    const separator = line.indexOf("|");
+
+    if (separator === -1) return false;
+
+    const role = line.slice(0, separator).trim();
+    const name = line.slice(separator + 1).trim();
+
+    return role.length > 0 && name.length > 0;
+  });
 
   const stopWords = new Set([
     "click",
@@ -37,8 +44,11 @@ export function filterTree(tree: string, prompt: string): string {
     .filter((word) => word.length > 1 && !stopWords.has(word));
 
   const ranked = elements
-    .map((line) => {
-      const [role, name, bounds] = line.trim().split("|");
+    .map((line, index) => {
+      const separator = line.indexOf("|");
+      const role = line.slice(0, separator).trim();
+      const name = line.slice(separator + 1).trim();
+
       const description = `${role} ${name}`.toLowerCase();
 
       const score = words.reduce(
@@ -47,12 +57,13 @@ export function filterTree(tree: string, prompt: string): string {
       );
 
       return {
-        line: `${role}|${name}|${bounds}`,
+        line: `${role}|${name}`,
         score,
+        index,
       };
     })
     .filter((item) => item.score > 0)
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => b.score - a.score || a.index - b.index);
 
   return ranked
     .slice(0, 10)

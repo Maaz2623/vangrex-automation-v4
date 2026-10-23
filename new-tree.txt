@@ -1,77 +1,380 @@
-WINDOW|vangrex-automation-v4
-Pane||0,0,1537,863
-Button|Minimize|1366,0,57,43
-Button|Restore|1422,0,59,43
-Button|Close|1479,0,59,43
-Document|vangrex-automation-v4 - Visual Studio Code|0,0,1538,864
-MenuItem|File|43,0,46,45
-MenuItem|Edit|87,0,48,45
-MenuItem|Selection|134,0,87,45
-MenuItem|View|218,0,55,45
-MenuItem|Go|272,0,43,45
-MenuItem|Run|313,0,49,45
-MenuItem|More|360,0,49,45
-Button|Go Back|443,8,30,29
-Button|Go Forward|476,8,29,29
-ToolBar|Agent Status|508,7,586,31
-Button|Open Quick Access|509,8,521,29
-Group||1028,8,65,29
-Button|Open in Agents Window|1104,8,32,29
-Button|Update|1162,8,71,29
-Button|Customize Layout...|1236,8,29,29
-Button|Toggle Primary Side Bar|1268,8,29,29
-Button|Toggle Panel|1301,8,29,29
-Button|Toggle Secondary Side Bar|1333,8,29,29
-TabItem|Explorer|9,47,47,47
-TabItem|Search|9,102,47,46
-TabItem|Source Control - 1 pending changes|9,157,47,47
-TabItem|Run and Debug|9,211,47,47
-TabItem|Extensions|9,266,47,47
-TabItem|Vercel|9,320,47,47
-TabItem|Vercel Deployment|9,375,47,46
-TabItem|Python|9,430,47,46
-TabItem|Thunder Client|9,484,47,47
-Button|Accounts - Sign in to Sync Settings|9,718,47,47
-Button|Manage - New Code update available.|9,773,47,47
-Button|Views and More Actions...|310,50,29,29
-Button|Changes Section|65,83,273,37
-Tree|Source Control Management|60,118,283,330
-Edit|The editor is not accessible at this time. To enable screen reader optimized mode, use Shift+Alt+F1|97,127,175,27
-Button|Generate Commit Message|298,126,30,29
-Button|Commit Changes on "main"|89,168,213,31
-Button|More Actions...|302,168,31,31
-Button|Graph Section|65,446,273,37
-Button|main, origin/main|119,452,59,27
-Button|Go to Current History Item|181,452,27,27
-Button|Fetch From All Remotes|210,452,27,27
-Button|Pull|240,452,27,27
-Button|Push|270,452,27,27
-Button|Refresh|300,452,27,27
-Button|More Actions...|330,452,27,27
-Tree|Source Control History|60,482,283,336
-Group|Editor Group 1|349,44,1183,439
-TabItem|Problems|351,488,93,41
-TabItem|Output|442,488,78,41
-TabItem|Debug Console|518,488,136,41
-TabItem|Terminal|653,488,87,41
-TabItem|Ports|738,488,62,41
-Button|Focus Terminal [Alt] Split Terminal|1224,493,83,31
-Button|New Terminal [Alt] Split Terminal|1310,494,29,29
-Button|Launch Profile...|1334,494,21,29
-Button|Split Terminal|1358,494,29,29
-Button|Kill Terminal|1390,494,29,29
-Button|Views and More Actions...|1422,494,29,29
-Group||1459,498,3,22
-Button|Maximize Panel|1466,494,29,29
-Button|Hide Panel|1498,494,30,29
-Edit|Terminal 1, bun Run the command: Toggle Screen Reader Accessibility Mode for an optimized screen reader experience Use Alt+F1 for terminal accessibility help|374,785,12,23
-Edit|Terminal 3, bun Run the command: Toggle Screen Reader Accessibility Mode for an optimized screen reader experience Use Alt+F1 for terminal accessibility help|890,785,12,23
-Edit|Terminal input|1130,569,12,23
-List|Terminal tabs|1382,527,150,297
-StatusBar||0,828,1538,36
-Button|remote|12,830,34,31
-Button|vangrex-automation-v4 - main*, Checkout Branch/Tag...|50,830,71,31
-Button|vangrex-automation-v4 - Synchronize Changes|120,830,30,31
-Button|No Problems|158,830,82,31
-Button|Notifications|1491,830,37,31
-Button|Copilot status|1455,830,34,31
+Window|Extension: Color Highlight - vangrex-automation-v4 - Visual Studio Code (focused)
+Pane|N/A
+Pane|Extension: Color Highlight - vangrex-automation-v4 - Visual Studio Code
+Pane|N/A
+Pane|N/A
+Pane|N/A
+Button|Minimize
+Button|Restore
+Button|Close
+Pane|N/A
+Pane|N/A
+Pane|N/A
+Pane|N/A
+Document|Extension: Color Highlight - vangrex-automation-v4 - Visual Studio Code
+Group|N/A
+Pane|N/A
+Group|N/A
+Group|N/A
+Group|N/A
+MenuBar|N/A
+MenuItem|File
+MenuItem|Edit
+MenuItem|Selection
+MenuItem|View
+MenuItem|Go
+MenuItem|Run
+MenuItem|More
+ToolBar|N/A
+Button|Go Back
+Button|Go Forward
+ToolBar|Agent Status
+Button|Open Quick Access
+Group|N/A
+Button|Toggle Chat
+Button|Toggle Chat
+Group|N/A
+Group|N/A
+Button|More Actions
+ToolBar|N/A
+Button|Open in Agents Window
+ToolBar|Title actions
+Button|Customize Layout...
+Button|Toggle Primary Side Bar
+Text|
+Button|Toggle Panel
+Text|
+Button|Toggle Secondary Side Bar
+Text|
+Group|N/A
+Group|N/A
+Group|N/A
+Tab|Active View Switcher
+TabItem|Explorer
+Group|Explorer
+TabItem|Search
+Group|Search
+TabItem|Source Control
+Group|Source Control
+TabItem|Run and Debug
+Group|Run and Debug
+TabItem|Extensions
+Group|Extensions
+TabItem|Vercel
+Group|Vercel
+TabItem|Vercel Deployment
+Group|Vercel Deployment
+TabItem|Python
+Group|Python
+TabItem|Thunder Client
+Group|Thunder Client
+ToolBar|Manage
+Button|Accounts - Sign in to Sync Settings
+Group|Accounts - Sign in to Sync Settings
+Group|Accounts - Sign in to Sync Settings
+Text|1
+Button|Manage
+Group|Manage
+Text|
+Text|Extensions
+ToolBar|Extensions actions
+Button|Refresh
+Group|N/A
+Group|N/A
+Button|Views and More Actions...
+ToolBar|N/A
+Text|Search Extensions in Marketplace
+Text|N/A
+Edit|The editor is not accessible at this time. To enable screen reader optimized mode, use Shift+Alt+F1
+ToolBar|N/A
+Button|Clear Extensions Search Results
+Group|N/A
+Group|N/A
+Button|Filter Extensions...
+Text|
+Group|N/A
+Button|Installed Section
+Text|Installed
+Group|N/A
+ToolBar|Installed actions
+List|Extensions
+ListItem|Color Highlight, 2.8.0, Publisher Sergii N, Highlight web colors in your editor , Rated 4.62 out of 5 stars by 108 users (focused)
+Text|Color Highlight
+Text|
+Text|9.7M
+Text|
+Text|4.5
+Text|Highlight web colors in your editor
+Text|Sergii N
+ToolBar|N/A
+Button|Install
+Group|N/A
+Group|N/A
+ListItem|Error Lens, 3.30.0, Publisher Alexander, Improve highlighting of errors, warnings and other language diagnostics. , Rated 4.87 out of 5 stars by 188 users
+Text|Error Lens
+Text|Improve highlighting of errors, warnings and other language diagnostics.
+Text|Alexander
+ToolBar|N/A
+Button|Manage
+ListItem|ES7 React/Redux/GraphQL/React-Native snippets, 1.9.3, Publisher rodrigovallades, Simple extensions for React, Redux and Graphql in JS/TS with ES7 syntax (forked from dsznajder) , Rated 4.64 out of 5 stars by 11 users
+Text|ES7 React/Redux/GraphQL/React-Native snippets
+Text|Simple extensions for React, Redux and Graphql in JS/TS with ES7 syntax (forked from dsznajder)
+Text|rodrigovallades
+ToolBar|N/A
+Button|Manage
+ListItem|ES7+ React/Redux/React-Native snippets, 4.4.3, Publisher dsznajder, Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier. , Rated 4.36 out of 5 stars by 85 users
+Text|ES7+ React/Redux/React-Native snippets
+Text|
+Text|2238ms
+Text|Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier.
+Text|dsznajder
+ToolBar|N/A
+Button|Manage
+ListItem|ESLint, 3.0.34, Verified Publisher Microsoft, Integrates ESLint JavaScript into VS Code. , Rated 4.29 out of 5 stars by 251 users
+Text|ESLint
+Text|Integrates ESLint JavaScript into VS Code.
+Text|
+Text|Microsoft
+ToolBar|N/A
+Button|Manage
+ListItem|HTML CSS Support, 2.0.14, Publisher ecmel, CSS Intellisense for HTML , Rated 3.44 out of 5 stars by 108 users
+Text|HTML CSS Support
+Text|
+Text|36ms
+Text|CSS Intellisense for HTML
+Text|ecmel
+ToolBar|N/A
+Button|Manage
+Button|Recommended Section
+Text|Recommended
+Group|N/A
+ToolBar|Recommended actions
+List|Extensions
+ListItem|Container Tools, 2.5.3, Verified Publisher Microsoft, Makes it easy to create, manage, and debug containerized applications. , Rated 3.85 out of 5 stars by 20 users
+Text|
+Text|Container Tools
+Text|
+Text|19M
+Text|
+Text|4
+Text|Makes it easy to create, manage, and debug containerized applications.
+Text|
+Text|Microsoft
+ToolBar|N/A
+Button|Install
+Group|N/A
+Group|N/A
+ListItem|npm Intellisense, 1.4.5, Publisher Christian Kohler, Visual Studio Code plugin that autocompletes npm modules in import statements , Rated 4.66 out of 5 stars by 29 users
+Text|
+Text|npm Intellisense
+Text|
+Text|12.4M
+Text|
+Text|4.5
+Text|Visual Studio Code plugin that autocompletes npm modules in import statements
+Text|Christian Kohler
+ToolBar|N/A
+Button|Install
+Group|N/A
+Group|N/A
+Group|N/A
+Group|N/A
+Group|N/A
+Tab|N/A
+TabItem|mouse.ts
+Group|D:\projects\vangrex-automation-v4\src\terminator\mouse.ts
+ToolBar|Tab actions
+Button|Close
+TabItem|tree-filter.ts
+Group|D:\projects\vangrex-automation-v4\src\terminator\tree-filter.ts
+ToolBar|Tab actions
+Button|Close
+TabItem|mouse-listener.ts
+Group|D:\projects\vangrex-automation-v4\src\mouse-listener.ts
+ToolBar|Tab actions
+Button|Close
+TabItem|Extension: Color Highlight, preview
+Group|Extension: Color Highlight
+ToolBar|Tab actions
+Button|Close
+TabItem|test.ts
+Group|D:\projects\vangrex-automation-v4\test.ts
+ToolBar|Tab actions
+Button|Close
+TabItem|ui-tree.ts
+Group|D:\projects\vangrex-automation-v4\src\terminator\ui-tree.ts
+ToolBar|Tab actions
+Button|Close
+ToolBar|Editor actions
+Button|Split Editor Right [Alt] Split Editor Down
+Group|N/A
+Group|N/A
+Button|More Actions...
+Text|
+Document|N/A
+Text|Color Highlight
+Button|Sergii N
+Group|N/A
+Group|N/A
+Text|
+Text|9,718,697
+Hyperlink|     (108)
+Text|Highlight web colors in your editor
+ToolBar|N/A
+Button|Install
+Group|N/A
+Group|N/A
+CheckBox|Auto Update
+Group|N/A
+Text|Auto Update
+Button|Manage
+ToolBar|N/A
+Button|Extension details, rendered from the extension's 'README.md' file
+Button|Lists features contributed by this extension
+Button|Extension update history, rendered from the extension's 'CHANGELOG.md' file
+Group|N/A
+Text|Installation
+Text|Identifier
+Text|naumovs.color-highlight
+Text|Version
+Text|2.8.0
+Text|Last Updated
+Group|N/A
+Text|2 years ago
+Group|N/A
+Text|Size
+Hyperlink|1.05MB
+Text|Marketplace
+Text|Published
+Group|N/A
+Text|11 years ago
+Text|Last Released
+Group|N/A
+Text|3 years ago
+Text|Categories
+Group|N/A
+Text|Other
+Text|Resources
+Group|N/A
+Text|
+Group|N/A
+Text|Repository
+Group|N/A
+Text|
+Group|N/A
+Text|Issues
+Group|N/A
+Text|
+Group|N/A
+Text|License
+Group|N/A
+Text|
+Group|N/A
+Text|Sergii N
+Group|N/A
+Text|
+Group|N/A
+Text|Marketplace
+Tab|Active View Switcher
+TabItem|Problems
+Group|Problems
+TabItem|Output
+Group|Output
+TabItem|Debug Console
+Group|Debug Console
+TabItem|Terminal
+Group|Terminal
+TabItem|Ports
+Group|Ports
+ToolBar|Terminal actions
+Button|Focus Terminal [Alt] Split Terminal
+Button|New Terminal [Alt] Split Terminal
+Button|New Terminal [Alt] Split Terminal
+Group|N/A
+Group|N/A
+Button|Launch Profile...
+Button|Split Terminal
+Button|Kill Terminal
+Group|N/A
+Group|N/A
+Button|Views and More Actions...
+Group|N/A
+ToolBar|N/A
+Button|Maximize Panel
+Text|
+Button|Hide Panel
+Group|N/A
+Group|N/A
+Group|N/A
+Group|N/A
+Image|N/A
+Group|N/A
+Edit|Terminal 1, bun Run the command: Toggle Screen Reader Accessibility Mode for an optimized screen reader experience Use Alt+F1 for terminal accessibility help
+Image|N/A
+Image|N/A
+StatusBar|N/A
+Text|46 x 12
+Group|N/A
+Image|N/A
+Group|N/A
+Edit|Terminal 2, bun Run the command: Toggle Screen Reader Accessibility Mode for an optimized screen reader experience Use Alt+F1 for terminal accessibility help
+Image|N/A
+Image|N/A
+Group|N/A
+Group|N/A
+Group|N/A
+Edit|Terminal input
+Image|N/A
+Image|N/A
+List|Terminal tabs
+ListItem|Terminal 1 bun, split 1 of 2
+Group|┌ $(terminal) bun
+Text|┌
+Text|
+Text|bun
+ListItem|Terminal 2 bun, split 2 of 2
+Group|└ $(terminal) bun
+Text|└
+Text|
+Text|bun
+StatusBar|N/A
+Group|remote
+Button|remote
+Group|No Problems
+Button|No Problems
+Group|Notifications
+Button|Notifications
+Group|Copilot status
+Button|Copilot status
+Text|N/A
+Text|Please reload Visual Studio Code to complete the uninstallation of the extension Color Highlight.
+Text|N/A
+Group|N/A
+Text|Cursor added: line 120 column 22
+Group|N/A
+Group|N/A
+Document|N/A
+Document|N/A
+Document|Readme
+Document|N/A
+Document|N/A
+Button|scroll to top
+Text|vscode-ext-color-highlight
+Hyperlink|vscode-ext-color-highlight
+Text|This extension styles css/web colors found in your document.
+Text|Install
+Text|In VSC press Ctrl+Shift+P then type ">ext install", hit enter, search "Color Highlight".
+Text|Still confused? Click "Get Started" above.
+Text|Questionnaire
+Text|Please answer the questions in this questionnaire. Your feedback is very valuable and will help me improve this extension.
+Hyperlink|https://goo.gl/forms/5emac4WyQv7CWZOK2
+Text|Contributors
+List|N/A
+ListItem|chadgauth - Support for LCH color format
+Hyperlink|chadgauth
+ListItem|LucasMatuszewski - Support for floating-point numbers in hsl and rgb
+Hyperlink|LucasMatuszewski
+ListItem|lochstar - Styling modes for the marker
+Hyperlink|lochstar
+Text|Feel free to contribute!
+Pane|N/A

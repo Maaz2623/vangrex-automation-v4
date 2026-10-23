@@ -1,6 +1,4 @@
 import robot from "robotjs";
-import * as Terminator from "@mediar-ai/terminator";
-import { desktop } from "./desktop";
 
 export const clickAtBounds = async ({
   x,
@@ -21,15 +19,11 @@ export const clickAtBounds = async ({
   clickType: "left" | "right";
   double: boolean;
 }) => {
-  const app = await desktop.getCurrentApplication();
-
   const targetX = Math.round(x + (width * xPercentage) / 100);
   const targetY = Math.round(y + (height * yPercentage) / 100);
 
-  robot.setMouseDelay(0);
-
   // Move the real Windows mouse cursor.
-  robot.moveMouseSmooth(targetX, targetY, 0.2);
+  robot.moveMouseSmooth(targetX, targetY, -1);
 
   // Perform a real mouse click.
   robot.mouseClick(clickType, double);
